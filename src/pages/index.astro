@@ -1,0 +1,49 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SocialLinks from '../components/SocialLinks';
+import { experiences } from '../data/experience';
+import { ArrowRight } from 'lucide-react';
+---
+
+<BaseLayout title="Ignacio Machado - Software Engineer">
+  <section class="py-12">
+    <h1 class="font-mono text-4xl sm:text-5xl font-bold tracking-tight">
+      Hello World!
+    </h1>
+    
+    <p class="mt-6 text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
+      Software Engineer at <a href="https://tiendanube.com" target="_blank" rel="noopener noreferrer" class="link font-medium">Tiendanube</a>. 
+      Full-stack developer passionate about building great products and integrating AI to enhance user experiences.
+    </p>
+    
+    <p class="mt-4 text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
+      I speak Spanish, English, and Portuguese.
+    </p>
+    
+    <div class="mt-8">
+      <SocialLinks client:load />
+    </div>
+  </section>
+  
+  <section class="py-12 border-t border-slate-200 dark:border-slate-800">
+    <div class="flex items-center justify-between mb-6">
+      <h2 class="font-mono text-2xl font-semibold">Experience</h2>
+      <a href="/about" class="flex items-center gap-1 text-sm text-primary-600 dark:text-primary-400 hover:underline">
+        View all <ArrowRight className="w-4 h-4" />
+      </a>
+    </div>
+    
+    <div class="space-y-6">
+      {experiences.slice(0, 3).map((exp) => (
+        <div class="py-4 border-b border-slate-100 dark:border-slate-800 last:border-0">
+          <h3 class="font-medium text-slate-900 dark:text-slate-100">{exp.title}</h3>
+          <p class="text-sm text-slate-600 dark:text-slate-400 mt-1">
+            {exp.company} · {exp.startDate} - {exp.endDate}
+          </p>
+        </div>
+      ))}
+    </div>
+  </section>
+  
+
+</BaseLayout>
