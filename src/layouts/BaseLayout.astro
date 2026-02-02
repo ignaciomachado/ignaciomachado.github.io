@@ -33,11 +33,10 @@ const currentPath = Astro.url.pathname;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title}</title>
     
-    <!-- Prevent flash of wrong theme -->
+    <!-- Prevent flash of wrong theme - Dark mode by default -->
     <script is:inline>
       const theme = localStorage.getItem('theme');
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      if (theme === 'dark' || (!theme && prefersDark)) {
+      if (theme !== 'light') {
         document.documentElement.classList.add('dark');
       }
     </script>

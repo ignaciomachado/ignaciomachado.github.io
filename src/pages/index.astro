@@ -7,21 +7,39 @@ import { ArrowRight } from 'lucide-react';
 
 <BaseLayout title="Ignacio Machado - Software Engineer">
   <section class="py-12">
-    <h1 class="font-mono text-4xl sm:text-5xl font-bold tracking-tight">
-      Hello World!
-    </h1>
-    
-    <p class="mt-6 text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
-      Software Engineer at <a href="https://tiendanube.com" target="_blank" rel="noopener noreferrer" class="link font-medium">Tiendanube</a>. 
-      Full-stack developer passionate about building great products and integrating AI to enhance user experiences.
-    </p>
-    
-    <p class="mt-4 text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
-      I speak Spanish, English, and Portuguese.
-    </p>
-    
-    <div class="mt-8">
-      <SocialLinks client:load />
+    <div class="flex flex-col sm:flex-row items-center sm:items-start gap-8">
+      <!-- Profile Photo -->
+      <div class="flex-shrink-0">
+        <div class="relative">
+          <img 
+            src="/perfil.jpeg" 
+            alt="Ignacio Machado"
+            class="w-32 h-32 sm:w-40 sm:h-40 rounded-full object-cover ring-4 ring-slate-200 dark:ring-slate-700 shadow-lg"
+          />
+          <div class="absolute inset-0 rounded-full ring-2 ring-primary-500/20"></div>
+        </div>
+      </div>
+      
+      <!-- Intro Text -->
+      <div class="text-center sm:text-left">
+        <h1 class="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900 dark:text-slate-100">
+          Hi, I'm <span class="text-primary-600 dark:text-primary-400">Ignacio</span>
+        </h1>
+        <p class="mt-2 text-xl text-slate-600 dark:text-slate-400 font-medium">
+          Software Engineer 
+        </p>
+        
+        <p class="mt-4 text-slate-600 dark:text-slate-400 leading-relaxed max-w-lg">
+          Full-stack developer passionate about building great products and integrating AI to enhance user experiences.
+        </p>
+        <p class="mt-2 text-slate-600 dark:text-slate-400">
+          I speak Spanish, English, and Portuguese.
+        </p>
+        
+        <div class="mt-6">
+          <SocialLinks client:load />
+        </div>
+      </div>
     </div>
   </section>
   
